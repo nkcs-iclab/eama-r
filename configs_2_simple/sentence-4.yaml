@@ -1,0 +1,58 @@
+# split_hyper:
+# - (200, 40, [], 10)
+# english
+split_hyper:
+- (200, 40, [], 10)
+candidate_split_hyper:
+- (100, 0, ['。'], 10)
+candidate_docs_num: 2000
+
+emb_type: "local"
+
+emb_model_name: "thenlper/gte-large"
+# emb_model_name: "thenlper/gte-large-zh"
+
+
+#这是专利的
+origin_doc_path: '/home/fengmingjian/src/docnk'
+init_sentence_doc_path: '/home/fengmingjian/src/sentence/sentence_files_clearhtml_NK100token/'
+init_vector_path: '/home/fengmingjian/src/emb/emb-patent-word-scentence-NK100token/'
+merge_sentence_doc_path: '/home/fengmingjian/src/sentence/sentence_files_clearhtml_NK100token/'
+merge_vector_path: '/home/fengmingjian/src/emb/emb-patent-word-scentence-NK100token/'
+same_file_vector_path: '/home/fengmingjian/src/emb/emb-patent-word-scentence-NK100token-file/'
+candidate_docs_dir: '/home/fengmingjian/src/sentence/sentence_files_clearhtml_NK100token/'
+query_file: '/home/fengmingjian/src/csv/简单专利QA12_4.csv'
+stage_1_result: '/home/fengmingjian/src/newresults/NK100-stage1.json'
+result_stage_2_file: '/home/fengmingjian/src/newresults/NK100token-stage2.json'
+
+
+
+
+init_sentence_num: 6
+init_step_size: 1
+
+merge_sentence_num: 4
+merge_step_size: 1
+
+# candidate_word: 100
+# # candidate_word: 200
+# candidate_content: 100
+
+# candidate_word: 100
+candidate_word: 200
+candidate_content: 100
+
+stop_words_path: '/home/fengmingjian/src/csv/1.txt'
+#model_name: 'qwen:14b'
+model_name: 'qwen2.5:14b-instruct-fp16'
+model_type: "ollama"
+debug: False
+
+stage_1_num: 5
+#query_type: "input"
+query_type: "file"
+query_tuple: '/home/lidongwen/lidongwen/langchain-llama/results/two-tuple-en.txt'
+
+# model_name: '/home/lidongwen/lidongwen/model-checkpoints/linly-llama-7B'
+# model_type: "local"
+

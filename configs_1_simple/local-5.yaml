@@ -1,0 +1,38 @@
+split_hyper:
+  - (200, 40, [], 10)
+candidate_split_hyper:
+  - (100, 0, ['。'], 10)
+candidate_docs_num: 2000
+candidate_content: 10
+emb_type: "local"
+#emb_model_name: "/home/lidongwen/lidongwen/huggingface-model/models--shibing624--text2vec-base-chinese"
+# 替换成英文模型
+# emb_model_name: "thenlper/gte-large-zh"
+emb_model_name: "thenlper/gte-large-zh"
+
+
+doc_path: '/home/fengmingjian/src/docnk'
+candidate_docs_dir: '/home/fengmingjian/src/docnk'
+
+
+
+vector_path: '/home/fengmingjian/src/newvector_path/emb-patent-local-NK100'
+
+cluster_hyperparams: 0.3
+cluster_method: "agglomerative"
+#model_name: 'qwen:14b'
+model_name: 'qwen2.5:14b-instruct-fp16'
+model_type: "ollama"
+debug: False
+
+
+query_file: '/home/fengmingjian/src/csv/简单专利QA12_4.csv'
+stage_1_result: '/home/fengmingjian/src/newresults/NK100-stage1.json'
+
+
+#query_type: "input"
+query_type: "file"
+query_tuple: '/home/lidongwen/lidongwen/langchain-llama/results/two-tuple-en.txt'
+# model_name: '/home/lidongwen/lidongwen/model-checkpoints/linly-llama-7B'
+# model_type: "local"
+
